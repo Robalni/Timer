@@ -53,6 +53,10 @@ void Timer::update()
         }
     }
 
+    if (Input::pressed(InputKey::reset)) {
+        reset();
+    }
+
     if (running) {
         time.ms = SDL_GetTicks() - started_at.ms;
 

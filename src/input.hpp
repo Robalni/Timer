@@ -1,7 +1,7 @@
 #pragma once
 
 enum InputKey {
-    start_stop_reset, n_keys
+    start_stop_reset, reset, n_keys
 };
 
 class Input {

@@ -22,6 +22,8 @@ void Input::read()
         case SDL_JOYBUTTONDOWN:
             if (event.jbutton.button == 7) {
                 handle_event(InputKey::start_stop_reset, event.type);
+            } else if (event.jbutton.button == 6) {
+                handle_event(InputKey::reset, event.type);
             }
             break;
         }
