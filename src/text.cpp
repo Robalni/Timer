@@ -1,12 +1,18 @@
 #include "text.hpp"
 #include "app.hpp"
-#include <string.h>
+#include <cstring>
+#include <string>
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <iostream>
 #include <string>
 
 Text::Text(const char* str, const char* fontfile, int size)
+    : Text(std::string(str), fontfile, size)
+{
+}
+
+Text::Text(const std::string str, const char* fontfile, int size)
 {
     texture = nullptr;
     color = SDL_Color{0xff, 0xff, 0xff, 0xff};
@@ -17,7 +23,7 @@ Text::Text(const char* str, const char* fontfile, int size)
         throw;
     }
 
-    set(std::string(str));
+    set(str);
 }
 
 Text::~Text()
@@ -42,6 +48,9 @@ void Text::change()
         SDL_DestroyTexture(texture);
     }
     texture = SDL_CreateTextureFromSurface(App::renderer, surf);
+    if (!texture) {
+        throw;
+    }
     SDL_FreeSurface(surf);
     if (color.a < 255) {
         SDL_SetTextureAlphaMod(texture, color.a);

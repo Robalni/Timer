@@ -12,6 +12,8 @@ set(SOURCE_FILES
   src/coord.hpp
   src/input.cpp src/input.hpp
   src/object.cpp src/object.hpp
+  src/segment.cpp src/segment.hpp
+  src/time.cpp src/time.hpp
   )
 add_executable(timer ${SOURCE_FILES})
 include_directories(${SDL2_INCLUDE_DIR} ${SDL2_TTF_INCLUDE_DIR})

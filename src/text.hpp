@@ -9,6 +9,7 @@
 class Text : public Object {
 public:
     Text(const char* str, const char* fontfile, int size);
+    Text(const std::string str, const char* fontfile, int size);
     ~Text();
     void set(std::string new_string);
     void append(const char *str);

@@ -18,7 +18,7 @@ int App::fps_wanted;
 void App::init()
 {
     int win_width = 200;
-    int win_height = 70;
+    int win_height = 200;
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
     SDL_SetHint(SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS, "1");
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");

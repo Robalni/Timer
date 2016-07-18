@@ -2,6 +2,9 @@
 
 #include "object.hpp"
 #include "text.hpp"
+#include "segment.hpp"
+#include "time.hpp"
+#include <vector>
 
 class Timer : public Object {
 public:
@@ -10,17 +13,15 @@ public:
     void start();
     void stop();
     void reset();
-    int get_hours();
-    int get_minutes();
-    int get_seconds();
-    int get_millisec();
 
 private:
     void render();
 
+    std::vector<Segment> segments;
+    unsigned int current_segment;
     Text& text;
     bool running;
-    int64_t started_at;
-    int64_t at_ms;
-    int64_t last_render_ms;
+    Time time;
+    Time started_at;
+    Time last_render;
 };
