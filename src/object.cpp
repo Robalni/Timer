@@ -5,7 +5,7 @@
 
 Object::Object()
     : pos(Coord{0.0, 0.0})
-    ,parent(nullptr)
+    , parent(nullptr)
 {
     App::add_object(this);
 }
