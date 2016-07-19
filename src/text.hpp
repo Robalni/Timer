@@ -8,6 +8,7 @@
 
 class Text : public Object {
 public:
+    Text();
     Text(const char* str, const char* fontfile, int size);
     Text(const std::string str, const char* fontfile, int size);
     ~Text();

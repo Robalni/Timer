@@ -12,6 +12,7 @@ public:
     virtual void set_center(Coord c);
 
     Coord pos;
+    Object* parent;
 
 protected:
     Coord center;

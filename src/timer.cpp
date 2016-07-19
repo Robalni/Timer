@@ -11,29 +11,17 @@ Timer::Timer(Text& text)
     current_segment = 0;
     reset();
 
-    segments.push_back(Segment("Enter tree"));
-    segments.push_back(Segment("Get bottle"));
-    segments.push_back(Segment("Gohma"));
-    segments.push_back(Segment("Ganondorf", Time(200, 27, 13)));
-    segments.push_back(Segment("Escape tower", Time(800, 35, 15)));
-    segments.push_back(Segment("Ganon", Time(600, 11, 19)));
+    segments.reserve(6);
+    segments.emplace_back("Enter tree");
+    segments.emplace_back("Get bottle");
+    segments.emplace_back("Gohma");
+    segments.emplace_back("Ganondorf", Time(200, 27, 13));
+    segments.emplace_back("Escape tower", Time(800, 35, 15));
+    segments.emplace_back("Ganon", Time(600, 11, 19));
 
     double i = 0;
     for (Segment& s : segments) {
-        Text* t = new Text(s.name.c_str(), "font", 18);
-        t->pos = Coord{10, i};
-        t->set_center(Coord{-1, -1});
-
-        std::string str;
-        if (s.time_exists) {
-            str = s.time_best_run.to_str();
-        } else {
-            str = std::string("-");
-        }
-        Text* u = new Text(str, "font", 18);
-        u->pos = Coord{(double)App::get_window_width() - 10, i};
-        u->set_center(Coord{1, -1});
-
+        s.pos.y = i;
         i += 22;
     }
 }

@@ -7,6 +7,11 @@
 #include <iostream>
 #include <string>
 
+Text::Text()
+    : Text(std::string(""), "font", 10)
+{
+}
+
 Text::Text(const char* str, const char* fontfile, int size)
     : Text(std::string(str), fontfile, size)
 {
