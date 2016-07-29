@@ -45,6 +45,11 @@ void Text::set(std::string new_string)
     change();
 }
 
+std::string& Text::get()
+{
+    return str;
+}
+
 void Text::change()
 {
     SDL_Surface* surf;

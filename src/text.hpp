@@ -13,6 +13,7 @@ public:
     Text(const std::string str, const char* fontfile, int size);
     ~Text();
     void set(std::string new_string);
+    std::string& get();
     void append(const char *str);
     void set_color(int r, int g, int b, int a);
 
