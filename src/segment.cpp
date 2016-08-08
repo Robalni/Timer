@@ -62,9 +62,9 @@ void Segment::update_time_text()
             } else {
                 Time t(diff_ms);
                 if (diff_ms < 60000) {
-                    ss << '-' << t.to_str(1, 2);
+                    ss << '+' << t.to_str(1, 2);
                 } else {
-                    ss << '-' << t.to_str(1, 0);
+                    ss << '+' << t.to_str(1, 0);
                 }
                 time_text.set_color(0xff, 0x66, 0x33, 0xff);
             }
