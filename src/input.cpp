@@ -26,6 +26,14 @@ void Input::read()
                 handle_event(InputKey::reset, event.type);
             }
             break;
+        case SDL_KEYUP:
+        case SDL_KEYDOWN:
+            if (event.key.keysym.sym == SDLK_SPACE) {
+                handle_event(InputKey::start_stop_reset, event.type);
+            } else if (event.key.keysym.sym == SDLK_BACKSPACE) {
+                handle_event(InputKey::reset, event.type);
+            }
+            break;
         }
     }
 }
